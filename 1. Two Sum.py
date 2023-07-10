@@ -1,20 +1,17 @@
 def twoSum(nums, target): #nums = N, target = T
 	seen = dict() #O(N) space
-	otherNum = None
-	found = False
-	output = []
+        found = False
 
-	while not found:
-		for i in range(len(nums)): #0(N) time
-			otherNum = target - nums[i]
-			if otherNum not in seen:
-				seen[nums[i]] = i
-			else:
-				output.append(i)
-				output.append(seen[otherNum])
-				found = True
-	
-	return output
+        while not found:
+            for i in range(len(nums)): #0(N) time
+                otherNum = target - nums[i]
+                if otherNum not in seen:
+                    seen[nums[i]] = i
+                else:
+                    output = [i, seen[otherNum]]
+                    found = True
+        
+        return output
 
 nums = [3, 3]
 target = 6
